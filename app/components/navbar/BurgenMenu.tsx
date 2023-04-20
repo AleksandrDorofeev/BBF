@@ -13,6 +13,11 @@ const BurgerMenu = () => {
     setOpen((value) => !value);
   }, [])
 
+  const selectItem = useCallback((path: string) => {
+    router.push(path);
+    toggleOpen();
+  }, [router, toggleOpen]);
+
   return (
     <div className="relative hidden max-sm:block">
       <div className="flex flex-row items-center gap-3">
@@ -52,11 +57,11 @@ const BurgerMenu = () => {
           <div className='flex flex-col cursor-pointer'>
             <>
               <MenuItem
-                onClick={() => router.push('/')}
+                onClick={() => selectItem('/')}
                 label='Home'
               />
                <MenuItem
-                onClick={() => router.push('/products')}
+                onClick={() => selectItem('/products')}
                 label='Products'
               />
             </>

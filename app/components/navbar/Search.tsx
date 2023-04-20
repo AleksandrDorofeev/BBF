@@ -35,7 +35,9 @@ const Search = () => {
         ">
           Home
         </div>
-        <div className="
+        <div
+          onClick={() => router.push('/products')}
+          className="
           text-sm
           pl-6
           pr-2
@@ -45,7 +47,7 @@ const Search = () => {
           items-center
           gap-3
         ">
-          <div onClick={() => router.push('/products')} className="hidden sm:block">Products</div>
+          <div className="hidden sm:block">Products</div>
           <div className="
             p-2
             bg-gray-500

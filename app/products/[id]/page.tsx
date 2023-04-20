@@ -17,16 +17,17 @@ const Product =  (props: any) => {
   return product && (
     <Container>
       <div className="flex flex-col justify-between lg:flex-row gap-16">
-        <div className='flex flex-col gap-6 mx-auto max-w-[750px]'>
+        <div className='flex flex-col gap-6 mx-auto max-w-[750px] md:w-full'>
           <img 
             src={`https://media.bbf-bike.de/shop/images/${image}.jpg`} 
             alt="Image" 
-            className='w-full object-contain rounded-lg lg:max-w-[750px] lg:min-w-[750px] h-[750px]' />
+            className='w-full object-contain rounded-lg lg:max-w-[750px] lg:min-w-[600px]  md:h-[750px]' />
           <div className='flex flex-row justify-between items-center gap-3'>
-          {product.media.map((item: any, i: number) => {
+          {product.media.length > 1 && product.media.map((item: any, i: number) => {
               return (
                 <div 
-                  key={i} 
+                  key={i}
+                  onClick={() => setImage(item.IMAGENAME)}
                   className='
                     flex 
                     flex-col 
@@ -41,9 +42,8 @@ const Product =  (props: any) => {
                     hover:shadow-md
                     transition'>
                 <div 
-                  className='w-24 mx-auto'>
-                  <img 
-                    onClick={() => setImage(item.IMAGENAME)} 
+                  className='md:w-24 mx-auto'>
+                  <img  
                     src={`https://media.bbf-bike.de/shop/images/${item.IMAGENAME}.jpg`} 
                     alt="Image" 
                     className=' rounded-md min-w-[85px] max-w-[85px]' />

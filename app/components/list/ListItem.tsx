@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { useRouter } from "next/navigation";
 import { getSpecificFields } from "@/app/utils/getSpecificFields";
+import { memo } from 'react';
 
 const Product = (props: any) => {
   const router = useRouter();
@@ -42,4 +43,4 @@ const Product = (props: any) => {
   )
 }
 
-export default Product;
+export default memo(Product);

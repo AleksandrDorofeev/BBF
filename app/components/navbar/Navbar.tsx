@@ -3,7 +3,7 @@
 import Container from "../Container";
 import Logo from "./Logo";
 import Search from "./Search";
-import BurgerMenu from "./UserMenu";
+import BurgerMenu from "./BurgenMenu";
 
 const Navbar = () => {
   return (
